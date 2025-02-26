@@ -28,12 +28,143 @@ body {
   transition: background-color 0.75s ease, color 0.75s ease;
 }
 
+/* NavBar */
+
+/* Top Nav */
+#top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.7rem;
+
+  height: 2rem;
+  /* position: absolute; */
+}
+
+.menu-button {
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  cursor: pointer;
+}
+
+.menu-button span {
+  background: var(--text-color);
+  border-radius: 10px;
+  height: 4px;
+  margin: 3px 0;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.menu-button span:nth-of-type(1) {
+  width: 50%;
+}
+
+.menu-button span:nth-of-type(2) {
+  width: 100%;
+}
+
+.menu-button span:nth-of-type(3) {
+  width: 75%;
+}
+
+/* Properly aligned X formation */
+.menu-button.active span:nth-of-type(1) {
+  width: 40%;
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(4px, 1px);
+}
+
+.menu-button.active span:nth-of-type(2) {
+  width: 80%;
+
+  transform-origin: top;
+  transform: rotatez(-45deg);
+}
+
+.menu-button.active span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 40%;
+  transform: translate(14px, -5px) rotatez(45deg);
+}
+
+/* .menu-button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: var(--text-color);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.active .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.active .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.active .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+*/ #nav {
+  height: 90vh;
+  width: 100%;
+  z-index: 0;
+}
+
+/* Left Nav */
+#nav {
+  height: 90vh;
+  width: 15%;
+  position: absolute;
+}
+
+#nav ul {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.7rem;
+  padding: 0;
+
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+
+  position: absolute;
+}
+
+#nav.active ul {
+  transform: translatex(0);
+}
+
+#nav ul li {
+  list-style: none;
+}
+
+#nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
 /* THEME Switcher */
 
 .theme-switcher {
-  position: fixed;
-  top: 10px;
-  right: 12px;
+  /* right: 12px; */
   display: flex;
   gap: 10px;
   cursor: pointer;

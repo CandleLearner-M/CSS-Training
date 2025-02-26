@@ -35,3 +35,19 @@ document.documentElement.setAttribute(
 if (currentThemeFromLocalStorage === "dark") {
   darkMode();
 }
+
+
+// Navbar logic
+
+const menuButton = document.querySelector(".menu-button");
+const navBar = document.getElementById("nav");
+
+function toggleMenu() {
+  menuButton.classList.toggle("active");
+  navBar.classList.toggle("active");
+}
+
+function hideMenu() {
+  navBar.classList.remove("active");
+  menuButton.classList.remove("active");
+}
