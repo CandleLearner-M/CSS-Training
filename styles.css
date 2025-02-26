@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap");
+
+:root {
+  --bg-color: whitesmoke;
+  --text-color: #121212;
+  --border-color: 7px solid #121212;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: whitesmoke;
+  --border-color: 7px solid whitesmoke;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 0.75s ease, color 0.75s ease;
+}
+
+/* THEME Switcher */
+
+.theme-switcher {
+  position: fixed;
+  top: 10px;
+  right: 12px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  align-items: center;
+  z-index: 10;
+}
+
+.size {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Header */
+
+.header,
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.02em;
+  transition: letter-spacing 2s ease;
+  animation-name: focus-in-contract;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+}
+
+.social-icons {
+  font-size: 40px;
+  position: relative;
+  top: -20px;
+  text-align: center;
+  animation: focus-in-contract 3s linear;
+}
+
+.social-icons i {
+  margin: 0 4px;
+  transition: all ease 0.2s;
+}
+
+.social-icons i:hover {
+  cursor: pointer;
+  transform: scale(1.09);
+}
+
+@keyframes focus-in-contract {
+  0% {
+    letter-spacing: 1em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    letter-spacing: 0;
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* Section */
+
+section {
+  align-items: center;
+}
+
+/* Section-1 */
+
+.fas:hover {
+  transform: scale(1.1);
+}
+
+/* Section 2 */
+
+#section-2 img {
+  width: 70%;
+  max-width: 800px;
+  border: var(--border-color);
+  padding: 0.8rem;
+  position: relative;
+}
+
+#section-3 img {
+  width: 20rem;
+  padding: 0.6rem;
+  border: var(--border-color);
+}
+
+#section-3 img:not(:nth-child(3)) {
+  margin-right: 2rem;
+}
+
+.section-3-gallery {
+  display: flex;
+  width: 100%;
+}
+
+/* Section 4 */
+
+#section-4 .paragraph {
+  width: 50ch;
+  margin-bottom: 50px;
+}
+
+section h1 {
+  font-size: 40px;
+}
+
+/* Section 5 */
+
+#section-5 {
+  position: relative;
+}
+
+#section-5 h2 a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  top: -5rem;
+  transition: all 0.5s ease;
+}
+
+#section-5 h2 a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px; /* adjust spacing between text and underline */
+  width: 100%;
+  height: 3px; /* your desired underline thickness */
+  background-color: var(--text-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+#section-5 h2 a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Wave */
+.wave {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
+
+.wave > svg {
+  position: absolute;
+  bottom: 0;
+}
+
+/* Footer */
+
+.footer {
+  position: absolute;
+  bottom: 5px;
+
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
