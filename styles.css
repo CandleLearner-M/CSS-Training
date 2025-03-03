@@ -4,6 +4,7 @@
   --bg-color: whitesmoke;
   --text-color: #121212;
   --border-color: 7px solid #121212;
+  --letter-spacing-animation: 1em;
 }
 
 [data-theme="dark"] {
@@ -36,28 +37,34 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.4rem 0.7rem;
-
+  background: var(--bg-color);
   height: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   /* position: absolute; */
 }
 
 .menu-button {
   display: flex;
   flex-direction: column;
-  width: 40px;
+  justify-content: space-around;
+  width: 2.3rem;
+  height: 2rem;
   cursor: pointer;
+
+  z-index: 10;
 }
 
 .menu-button span {
   background: var(--text-color);
   border-radius: 10px;
-  height: 4px;
-  margin: 3px 0;
-  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  height: 0.3rem;
+  transition: 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
 .menu-button span:nth-of-type(1) {
-  width: 50%;
+  width: 40%;
 }
 
 .menu-button span:nth-of-type(2) {
@@ -65,17 +72,21 @@ body {
 }
 
 .menu-button span:nth-of-type(3) {
-  width: 75%;
+  width: 65%;
 }
 
 /* Properly aligned X formation */
 .menu-button.active span:nth-of-type(1) {
+  height: 0.25rem;
+
   width: 40%;
   transform-origin: bottom;
   transform: rotatez(45deg) translate(4px, 1px);
 }
 
 .menu-button.active span:nth-of-type(2) {
+  height: 0.25rem;
+
   width: 80%;
 
   transform-origin: top;
@@ -83,67 +94,34 @@ body {
 }
 
 .menu-button.active span:nth-of-type(3) {
+  height: 0.25rem;
+
   transform-origin: bottom;
   width: 40%;
-  transform: translate(14px, -5px) rotatez(45deg);
-}
-
-/* .menu-button {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.bar1,
-.bar2,
-.bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: var(--text-color);
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-/* Rotate first bar */
-.active .bar1 {
-  transform: translate(0, 11px) rotate(-45deg);
-}
-
-/* Fade out the second bar */
-.active .bar2 {
-  opacity: 0;
-}
-
-/* Rotate last bar */
-.active .bar3 {
-  transform: translate(0, -11px) rotate(45deg);
-}
-*/ #nav {
-  height: 90vh;
-  width: 100%;
-  z-index: 0;
+  transform: translate(13px, -7px) rotatez(45deg);
 }
 
 /* Left Nav */
 #nav {
-  height: 90vh;
+  height: 100%;
   width: 15%;
-  position: absolute;
+  position: fixed;
+  top: 2.8rem;
+  left: 0;
+  z-index: 99;
 }
 
 #nav ul {
   width: 100%;
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.7rem;
   padding: 0;
-
   transform: translateX(-100%);
   transition: transform 0.4s ease-in-out;
-
-  position: absolute;
+  position: relative;
 }
 
 #nav.active ul {
@@ -152,6 +130,7 @@ body {
 
 #nav ul li {
   list-style: none;
+  margin: 1rem 0;
 }
 
 #nav ul li a {
@@ -187,9 +166,9 @@ section {
   justify-content: center;
 }
 
-.header h1 {
+.header h2 {
   font-family: "Outfit", sans-serif;
-  font-size: 50px;
+  font-size: clamp(50px, 9vw, 70px);
   font-weight: 800;
   text-align: center;
   letter-spacing: 0.02em;
@@ -219,7 +198,7 @@ section {
 
 @keyframes focus-in-contract {
   0% {
-    letter-spacing: 1em;
+    letter-spacing: var(--letter-spacing-animation);
     filter: blur(12px);
     opacity: 0;
   }
@@ -284,7 +263,7 @@ section h1 {
   position: relative;
 }
 
-#section-5 h2 a {
+a {
   text-decoration: none;
   color: var(--text-color);
   font-size: 2rem;
@@ -294,7 +273,7 @@ section h1 {
   transition: all 0.5s ease;
 }
 
-#section-5 h2 a::after {
+a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -306,8 +285,7 @@ section h1 {
   transform-origin: left;
   transition: transform 0.5s ease;
 }
-
-#section-5 h2 a:hover::after {
+a:hover::after {
   transform: scaleX(1);
 }
 
@@ -316,12 +294,18 @@ section h1 {
   width: 100%;
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 0;
 }
 
 .wave > svg {
-  position: absolute;
+  position: relative;
   bottom: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: -1px;
 }
 
 /* Footer */
@@ -338,4 +322,52 @@ section h1 {
   justify-content: center;
   align-items: center;
   z-index: 1;
+}
+
+/* Media Queries --------------------------- */
+
+/* All Mobile devices */
+
+@media screen and (max-width: 1180px) {
+  :root {
+    --letter-spacing-animation: 0.1em;
+  }
+
+  #nav {
+    width: 100%;
+  }
+  #nav ul {
+    background-color: var(--bg-color);
+    top: 0;
+    margin: 0;
+  }
+
+ .footer {
+  bottom: -10px;
+ }
+
+  .wave > svg:last-child {
+    border-bottom: none;
+    margin-bottom: -1px;
+  }
+
+  .wave::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 25px; 
+    background-color: #03045e;
+    z-index: 0; 
+  }
+}
+
+
+/* Tablette Horizontal */
+
+/* Tablette Vertical */
+@media screen and (min-width: 700px) and (max-width: 800px) {
+  
 }
