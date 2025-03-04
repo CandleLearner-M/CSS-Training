@@ -413,5 +413,16 @@ a:hover::after {
 
 
 @media screen and (max-width: 600px) {
-  
+  section {
+    text-align: center;
+  }
+  #nav ul li {
+    position: relative;
+    left: -1.1rem;
+  }
+
+  #section-1 h2 {
+    position: relative;
+    font-size: 2.7rem;
+  }
 }
