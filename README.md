@@ -5,7 +5,9 @@
 
 A responsive multi-section website template that demonstrates various CSS techniques, animations, and modern web design principles. The project showcases a clean, professional layout with light/dark theme support and mobile responsiveness.
 
-![Website Preview](https://via.placeholder.com/800x400?text=Ultimate+Responsive+Template+Preview)
+[![Website Preview](https://i.imgur.com/K3KnGzQ.png)](https://candlelearner-m.github.io/The-Ultimate-Responsive-WT/)
+
+[**Live Demo**](https://candlelearner-m.github.io/The-Ultimate-Responsive-WT/)
 
 ## 🌟 Features
 
@@ -99,6 +101,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-*Last updated: 2025-03-04*
+*Last updated: 2025-03-04 20:38:00 UTC*
 
-🔗 [Live Demo](#) · 📝 [Report Bug](#) · 🔍 [Request Feature](#)
+🔗 [Live Demo](https://candlelearner-m.github.io/The-Ultimate-Responsive-WT/) · 📝 [Report Bug](https://github.com/CandleLearner-M/The-Ultimate-Responsive-WT/issues) · 🔍 [Request Feature](https://github.com/CandleLearner-M/The-Ultimate-Responsive-WT/issues)
