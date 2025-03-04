@@ -380,3 +380,33 @@ a:hover::after {
     margin: 0 !important;
   }
 }
+
+
+/* SmartPhone Horizontal  */
+
+@media screen and (min-width: 600px) and (max-width: 950px) and (max-height: 500px) {
+  #nav ul {
+    padding-top: 2rem;
+  }
+  #nav ul li {
+    margin: 1rem 0;
+  }
+  #nav ul li a {
+    font-size: 1.25rem;
+  }
+
+
+  section:not(:nth-child(1)) {
+    margin-top: 5rem;
+  }
+  .section-3-img {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #section-3 img {
+    width: 40%;
+    margin: 0 !important;
+  }
+
+}
