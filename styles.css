@@ -381,7 +381,6 @@ a:hover::after {
   }
 }
 
-
 /* SmartPhone Horizontal  */
 
 @media screen and (min-width: 600px) and (max-width: 950px) and (max-height: 500px) {
@@ -395,7 +394,6 @@ a:hover::after {
     font-size: 1.25rem;
   }
 
-
   section:not(:nth-child(1)) {
     margin-top: 5rem;
   }
@@ -408,14 +406,11 @@ a:hover::after {
     width: 40%;
     margin: 0 !important;
   }
-
 }
 
-
 @media screen and (max-width: 600px) {
-
   :root {
-  --border-color: 4px solid #121212;
+    --border-color: 4px solid #121212;
   }
 
   .social-icons {
@@ -431,7 +426,7 @@ a:hover::after {
     font-size: 2.7rem;
   }
 
-   section h1 {
+  section h1 {
     font-size: 2rem;
   }
 
@@ -443,7 +438,7 @@ a:hover::after {
   #section-3 img {
     width: 60%;
     padding: 0.3rem;
-    margin: 0 !important
+    margin: 0 !important;
   }
 
   #section-4 .paragraph {
@@ -451,7 +446,4 @@ a:hover::after {
     text-align: left;
     margin-bottom: 1rem;
   }
-
-
-  
 }
